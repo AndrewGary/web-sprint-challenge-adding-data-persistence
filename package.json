@@ -6,8 +6,8 @@
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand --silent",
     "start": "node index.js",
     "server": "nodemon index.js",
-    "migrage": "",
-    "rollback": ""
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback"
   },
   "repository": {
     "type": "git",
@@ -17,8 +17,13 @@
   "devDependencies": {
     "cross-env": "7.0.3",
     "eslint": "8.10.0",
+    "express": "^4.17.3",
     "jest": "27.5.1",
     "nodemon": "^2.0.15",
     "supertest": "6.2.2"
+  },
+  "dependencies": {
+    "knex": "^1.0.4",
+    "@vscode/sqlite3": "^5.0.7"
   }
 }
